@@ -1,0 +1,62 @@
+import java.util.*;
+
+class ParkingTicket {
+    String vehicleNo;
+    double ratePerMinute;
+
+    // Constructor
+    ParkingTicket(String vehicleNo, double ratePerMinute) {
+        this.vehicleNo = vehicleNo;
+        this.ratePerMinute = ratePerMinute;
+    }
+
+    // Calculate fine
+    final double calculateFine(int overstayMinutes) {
+        return overstayMinutes * ratePerMinute;
+    }
+
+    // Print receipt
+    final void printReceipt(int overstayMinutes) {
+        double fine = calculateFine(overstayMinutes);
+
+        System.out.println(
+            vehicleNo + " - Fine: Rs " + fine
+        );
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        String[] vehicleNos = {
+            "TN09AB1234",
+            "TN22CD5678",
+            "TN09EF9012",
+            "TN10GH3456"
+        };
+
+        double[] rates = {
+            2, 2, 3, 2
+        };
+
+        int[] overstayMinutes = {
+            15, 0, -5, 8
+        };
+
+        for (int i = 0; i < vehicleNos.length; i++) {
+
+            ParkingTicket obj =
+                new ParkingTicket(vehicleNos[i], rates[i]);
+
+            // Check overstay
+            if (overstayMinutes[i] > 0) {
+                obj.printReceipt(overstayMinutes[i]);
+            } else {
+                System.out.println(
+                    vehicleNos[i] +
+                    " - No fine, within allotted time"
+                );
+            }
+        }
+    }
+}
