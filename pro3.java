@@ -24,7 +24,7 @@ class Pruner extends CuttingTool {
     }
 }
 
-public class Main {
+public class pro3 {
     public static void main(String[] args) {
         CuttingTool c = new CuttingTool();[cite: 5]
         System.out.println(c.use());[cite: 5]
