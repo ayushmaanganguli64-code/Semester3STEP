@@ -1,9 +1,9 @@
-public class GymMember {
+public class pro1 {
     private final String memberId;
     private final int monthlyFee;
     private int sessionsAttended;
 
-    public GymMember(String memberId, int monthlyFee) {
+    public pro1(String memberId, int monthlyFee) {
         
         if (memberId == null || memberId.trim().isEmpty() || memberId.length() < 4) {
             throw new IllegalArgumentException("construction rejected");[cite: 7]
@@ -41,7 +41,7 @@ public class GymMember {
         if (memberIds != null) {
             for (String id : memberIds) {
                 try {
-                    new GymMember(id, monthlyFee);[cite: 7]
+                    new pro1(id, monthlyFee);[cite: 7]
                     signedUp++;
                 } catch (IllegalArgumentException e) {
                     rejected++;
@@ -55,7 +55,7 @@ public class GymMember {
     public static void main(String[] args) {
       
         try {
-            new GymMember("GM1", 1000);[cite: 7]
+            new pro1("GM1", 1000);[cite: 7]
         } catch (IllegalArgumentException e) {
             System.out.println("GM1: construction rejected");[cite: 7]
         }
@@ -72,7 +72,7 @@ public class GymMember {
     }
 }
 
-class PremiumMember extends GymMember {
+class PremiumMember extends pro1 {
     private final String trainerName;
 
     public PremiumMember(String memberId, int monthlyFee, String trainerName) {
